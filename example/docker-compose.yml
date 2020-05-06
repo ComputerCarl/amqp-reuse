@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  rmq:
+    image: "rabbitmq:3-management"
+    hostname: "rmq"
+    environment:
+      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+      # RABBITMQ_DEFAULT_USER: "guest"
+      # RABBITMQ_DEFAULT_PASS: "guest"
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    labels:
+      NAME: "rabbitmq1"
+    volumes:
+      - rabbit_mq:/etc/rabbitmq
+volumes:
+  rabbit_mq:
