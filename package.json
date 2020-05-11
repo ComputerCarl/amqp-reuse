@@ -1,7 +1,11 @@
 {
-  "name": "domain-mq",
-  "version": "1.0.0",
+  "name": "ampq-reuse",
+  "private": false,
+  "version": "0.1.0",
   "description": "",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com/"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

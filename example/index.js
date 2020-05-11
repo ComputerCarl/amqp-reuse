@@ -1,13 +1,14 @@
 const MessageQueue = require('../');
 
 const exchangeName = 'domfeed';
+
 const bindings = {
     enqueued: 'unverified_domains',
     verified: 'verified_domains',
     failed: 'failed_cf_lookups'
 };
 
-const flow = channel => {
+const flow = ({ channel, connection }) => {
     // we publish to exchanges
     const publish = (message, key) => channel.publish(exchangeName, key, Buffer.from(message), { persistent: true })
 
@@ -20,16 +21,16 @@ const flow = channel => {
     });
 
 
-    for (var i = 1000; i > 0; i--) {
+    for (var i = 250; i > 0; i--) {
         setTimeout(() => {
-            publish('gotcha', 'verified');
+            // publish with message and bound key
+            publish('ping!', 'verified');
         }, Math.random() * 60000);
     }
-}
+};
 
-const mq = new MessageQueue({
+new MessageQueue({
     exchangeName,
     bindings,
     onChannelReady: flow
 });
-
