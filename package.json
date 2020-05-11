@@ -1,7 +1,7 @@
 {
   "name": "amqp-reuse",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "publishConfig": {
     "registry": "https://registry.npmjs.com/"
