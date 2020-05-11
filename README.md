@@ -1,5 +1,7 @@
 You will need an `exchangeName` for the channel and `bindings` to map keys to queues.
 ```
+const MessageQueue = require('amqp-reuse');
+
 const exchangeName = 'domfeed';
 const bindings = {
     enqueued: 'unverified_domains',
@@ -46,7 +48,7 @@ new MessageQueue({
 });
 ```
 
-Parameters:
+Example parameters:
     amqpUrl = 'amqp://localhost',
     bindings,
     channelOptions = {
