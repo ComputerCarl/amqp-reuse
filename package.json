@@ -1,5 +1,5 @@
 {
-  "name": "amqp-reuse",
+  "name": "rabbit-reuse",
   "private": false,
   "version": "0.2.0",
   "description": "",

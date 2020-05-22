@@ -16,6 +16,8 @@ Create a handler function for the `onChannelReady` parameter of the instance.
 In this function, you can `publish`, `consume`, or otherwise utilize both the `channel` and `connection`.
 In this case, `flow` is the handler for the open AMQP connection and channel.
 
+
+This would also be a good place to set up an emitter to use events instead of a callback.
 ```
 const flow = ({ channel, connection }) => {
     // we publish to exchanges
